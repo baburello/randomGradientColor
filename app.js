@@ -37,3 +37,20 @@ const color2 = getGradient()
 console.log(color1, color2)
 
 //set color to body
+function setGradient() {
+    const color1 = getGradient()
+    const color2 = getGradient()
+    const randomDeg = Math.trunc(Math.random() * 360)
+    const bgColor = `linear-gradient(
+        ${randomDeg}deg,
+        ${color1},
+        ${color2}
+    )`
+
+    body.style.background = bgColor
+    colorText.textContent = bgColor
+}
+
+setGradient()
+
+container.addEventListener('click', setGradient)
